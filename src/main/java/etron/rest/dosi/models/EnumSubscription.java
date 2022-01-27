@@ -1,5 +1,5 @@
 package etron.rest.dosi.models;
 
-public enum EnumAbonnement {
+public enum EnumSubscription {
 	CITY,TRANSIT
 }
