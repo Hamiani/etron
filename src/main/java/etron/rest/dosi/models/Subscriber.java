@@ -37,11 +37,21 @@ public class Subscriber {
 	
 	@Column(name="PASSWORD", nullable=false)
 	private String password;
-	/*
-	@OneToMany( mappedBy = "compte", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Compte> comptes = new ArrayList<>();
-	*/
+	
+    @OneToMany(mappedBy = "subscriber", fetch = FetchType.EAGER)
+    private List<Abonnement> abonnements;
+    
 	public Subscriber() {}
+
+
+	public List<Abonnement> getAbonnements() {
+		return abonnements;
+	}
+
+
+	public void setAbonnements(List<Abonnement> abonnements) {
+		this.abonnements = abonnements;
+	}
 
 
 	public Subscriber(Long id, String nom, String prenom, String tel, String email, String estAcheteur,String password) {
